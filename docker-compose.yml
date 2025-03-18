@@ -1,0 +1,16 @@
+version: "3.8"
+
+services:
+  ubuntu-sql-client:
+    build: .
+    container_name: ubuntu_sql_client
+    env_file:
+      - .env
+    stdin_open: true
+    tty: true
+    networks:
+      - app_network
+
+networks:
+  app_network:
+    driver: bridge
