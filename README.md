@@ -1,25 +1,13 @@
-docker build -t sql-connector .
+I recently wanted to integrate a SQL Server database with a Python application. I found that the best way to do this was to use the pyodbc library. This library allows you to connect to a SQL Server database and execute queries. In this article, I will show you how to connect to a SQL Server database using the pyodbc library.
 
-docker run -e SQL_SERVER="your_server_address" \
-           -e SQL_DATABASE="your_database_name" \
-           -e SQL_USER="your_username" \
-           -e SQL_PASSWORD="your_password" \
-           sql-connector
+Sadly, this is a less explored topic and I had to experiment on my own and find the best solution for me.
 
-
-Run Ubuntu: docker run --rm -it ubuntu:20.04 bash
-
-
-Install ODBC 17 driver on Ubuntu 20.04
-```bash 
-apt update && apt install -y curl gnupg2 apt-transport-https
-curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add -
-apt-get install software-properties-common
-apt update
-add-apt-repository "$(curl -fsSL https://packages.microsoft.com/config/ubuntu/20.04/prod.list)"
-apt update
-ACCEPT_EULA=Y apt install -y msodbcsql17 unixodbc
+## How to Run:
+Clone the repository and run the following command:
+```bash
+docker compose up
 ```
 
-check ODBC Version
-odbcinst -q -d
+The SQL Server Time will be displayed in the console.
+
+you can then plug in your Django app and connect to the SQL Server database.

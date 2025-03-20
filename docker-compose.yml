@@ -5,7 +5,7 @@ services:
     build: .
     container_name: ubuntu_sql_client
     env_file:
-      - .env
+      - .env  
     stdin_open: true
     tty: true
     networks:
