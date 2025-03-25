@@ -17,8 +17,8 @@ conn_str = (
     f"DATABASE={DB_NAME};"
     f"UID={DB_USER};"
     f"PWD={DB_PASSWORD};"
-    f"Encrypt=no;"  # Disable encryption
-    f"TrustServerCertificate=yes;" # Keep this for self-signed certs if needed, otherwise remove.
+    # f"Encrypt=no;"  # Disable encryption
+    # f"TrustServerCertificate=yes;" # Keep this for self-signed certs if needed, otherwise remove.
 )
 
 # Wait for SQL Server to be available
